@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanta Takashima | Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --border: #2a2d3a;
+      --accent: #4f8ef7;
+      --accent2: #3ecf8e;
+      --text: #e8eaf0;
+      --muted: #8890a4;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== LAYOUT ===== */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== NAV ===== */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,17,23,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    nav .container { display: flex; justify-content: space-between; align-items: center; }
+    nav .logo { font-weight: 700; font-size: 1rem; letter-spacing: 0.05em; color: var(--text); }
+    nav ul { display: flex; gap: 28px; list-style: none; }
+    nav ul a { color: var(--muted); font-size: 0.9rem; transition: color .2s; }
+    nav ul a:hover { color: var(--text); text-decoration: none; }
+
+    /* ===== HERO ===== */
+    #hero {
+      padding: 96px 0 80px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(79,142,247,0.12);
+      color: var(--accent);
+      border: 1px solid rgba(79,142,247,0.3);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 0.82rem;
+      margin-bottom: 20px;
+    }
+    #hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    #hero h1 span { color: var(--accent); }
+    #hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto 32px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: opacity .2s;
+    }
+    .btn:hover { opacity: .85; text-decoration: none; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      margin-left: 12px;
+    }
+
+    /* ===== SECTION ===== */
+    section { padding: 72px 0; border-top: 1px solid var(--border); }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 40px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    @media (max-width: 600px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .about-card h3 { font-size: 0.95rem; color: var(--muted); margin-bottom: 8px; }
+    .about-card p { font-size: 0.95rem; }
+
+    /* ===== PROJECT ===== */
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .project-header {
+      background: linear-gradient(135deg, #1a2744 0%, #1a2d26 100%);
+      padding: 40px 36px;
+      border-bottom: 1px solid var(--border);
+    }
+    .project-header .tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .tag {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      padding: 3px 12px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .project-header h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
+    .project-header p { color: var(--muted); font-size: 0.95rem; }
+    .project-body { padding: 32px 36px; }
+    .project-body h3 { font-size: 1rem; font-weight: 700; margin: 24px 0 12px; }
+    .project-body h3:first-child { margin-top: 0; }
+
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 600px) { .feature-grid { grid-template-columns: 1fr; } }
+    .feature-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.88rem;
+    }
+    .feature-icon { font-size: 1.1rem; line-height: 1.4; flex-shrink: 0; }
+
+    .stack-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .stack-badge {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+    }
+    .stack-badge .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-blue { background: #4285F4; }
+    .dot-red  { background: #FF4B4B; }
+    .dot-green{ background: #3ECF8E; }
+    .dot-yellow{background: #F5A623; }
+
+    .arch-box {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-family: monospace;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.8;
+      overflow-x: auto;
+    }
+
+    .highlight { color: var(--accent2); }
+
+    .link-row { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+    .link-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      color: var(--text);
+      transition: background .2s;
+    }
+    .link-btn:hover { background: rgba(255,255,255,0.06); text-decoration: none; }
+    .link-btn-primary { background: var(--accent); border-color: var(--accent); }
+    .link-btn-primary:hover { background: #3a7fe0; }
+
+    /* ===== SKILLS ===== */
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+    .skill-card .icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .skill-card .name { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+    .skill-card .level { font-size: 0.75rem; color: var(--muted); }
+
+    /* ===== CONTACT ===== */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      text-align: center;
+    }
+    .contact-box p { color: var(--muted); margin-bottom: 24px; }
+    .contact-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="container">
+    <span class="logo">Kanta Takashima</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="container">
+    <div class="badge">薬学部 28 卒 · 就活中</div>
+    <h1>薬学 × AI で<br><span>医療の未来</span>を作る</h1>
+    <p>薬学専門知識と生成 AI 開発スキルを持つ薬学部 5 年生。<br>
+       実務実習用 AI シミュレーターを個人開発し、Streamlit Community Cloud で本番運用中。</p>
+    <a href="#project" class="btn btn-primary">プロジェクトを見る</a>
+    <a href="#contact" class="btn btn-outline">連絡する</a>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">About</div>
+    <h2 class="section-title">自己紹介</h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>薬学の専門知識</h3>
+        <p>薬学部 5 年生として OSCE・実務実習に取り組む中で、「いつでも繰り返し練習できる環境」を作りたいと思い、AI シミュレーターを開発しました。</p>
+      </div>
+      <div class="about-card">
+        <h3>プログラミングスキル</h3>
+        <p>Python / Streamlit / Gemini API / Supabase を独学で習得。認証・DB・LLM・評価機能を一貫して実装し、実際の学生に使ってもらえるレベルまで開発しました。</p>
+      </div>
+      <div class="about-card">
+        <h3>志望分野</h3>
+        <p>医療 IT 企業でエンジニアとして、薬学ドメイン知識と AI 開発スキルを活かしたプロダクト開発に携わりたいと考えています。</p>
+      </div>
+      <div class="about-card">
+        <h3>現在の状況</h3>
+        <p>昭和薬科大学 5 年生（28 卒）。実務実習（薬局・病院）と並行しながら就職活動中。医療 IT 企業・大手 SIer の医療部門を志望。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECT ===== -->
+<section id="project">
+  <div class="container">
+    <div class="section-label">Project</div>
+    <h2 class="section-title">開発プロジェクト</h2>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="tag-row">
+          <span class="tag">個人開発</span>
+          <span class="tag">本番運用中</span>
+          <span class="tag">卒業研究</span>
+        </div>
+        <h2>患者・医療従事者役 AI シミュレーター</h2>
+        <p>薬学生の実務実習 OSCE 対策向け、AI ロールプレイ練習ツール</p>
+      </div>
+
+      <div class="project-body">
+
+        <h3>概要</h3>
+        <p style="color:var(--muted); font-size:0.95rem; margin-bottom:8px;">
+          薬学部 5 年生の OSCE・実務実習に向けて開発。Google Gemini 2.5 Flash が患者・医師・看護師を演じ、
+          実際のコミュニケーション練習ができる。会話終了後に AI がチェックリストに基づいた評価フィードバックを返す。
+          Streamlit Community Cloud で本番運用しており、複数ユーザーに利用されている。
+        </p>
+
+        <h3>主な機能</h3>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <span class="feature-icon">🎭</span>
+            <span>AI による患者・医師・看護師ロールプレイ（10 種類以上のシナリオ）</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📊</span>
+            <span>チェックリスト + SOAP 薬歴の AI 自動評価（JSON パース）</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🎓</span>
+            <span>OSCE 対策 / 実務実習前練習 / 初期研修 の 3 モード</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🔐</span>
+            <span>Supabase Auth による認証・自動ログアウト（30 分）</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🔊</span>
+            <span>gTTS による AI 音声読み上げ</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">👩‍🏫</span>
+            <span>教員向けスタッフダッシュボード（全学生評価の一覧閲覧）</span>
+          </div>
+        </div>
+
+        <h3>技術スタック</h3>
+        <div class="stack-grid">
+          <div class="stack-badge"><span class="dot dot-blue"></span>Google Gemini 2.5 Flash</div>
+          <div class="stack-badge"><span class="dot dot-red"></span>Streamlit 1.41</div>
+          <div class="stack-badge"><span class="dot dot-green"></span>Supabase (Auth + PostgreSQL)</div>
+          <div class="stack-badge"><span class="dot dot-yellow"></span>Python 3.x</div>
+          <div class="stack-badge"><span class="dot dot-blue"></span>gTTS</div>
+          <div class="stack-badge"><span class="dot dot-green"></span>Streamlit Community Cloud</div>
+        </div>
+
+        <h3>アーキテクチャ</h3>
+        <div class="arch-box">
+ユーザー<br>
+  ↓<br>
+<span class="highlight">Streamlit UI</span> (app.py)<br>
+  ├── 認証 (auth.py / Supabase Auth)<br>
+  ├── シナリオ選択 (sidebar.py / prompts*.py)<br>
+  ├── チャット (ui_chat.py / llm.py)<br>
+  │     └── <span class="highlight">Gemini 2.5 Flash API</span><br>
+  ├── 音声 (audio.py / gTTS)<br>
+  └── 評価 (evaluation.py)<br>
+        └── <span class="highlight">Supabase DB</span> (evaluations テーブル)
+        </div>
+
+        <h3>工夫した点</h3>
+        <p style="color:var(--muted); font-size:0.9rem;">
+          ① プロンプトで「聞かれたことだけ答える」制約を設け、実臨床に近い会話を再現<br>
+          ② 評価を JSON 構造化出力させ、チェックリスト・アドバイス・SOAP をパース・表示<br>
+          ③ <code>last_active_at</code> を Supabase に記録し、サーバー再起動後もタイムアウト判定が動作<br>
+          ④ <code>{{TODAY+3Y}}</code> などの日付テンプレートを起動時に実日付へ動的置換
+        </p>
+
+        <div class="link-row">
+          <a href="https://patient-clinician-ai-simulator-showa-pharmaceutical-university.streamlit.app/" target="_blank" class="link-btn link-btn-primary">
+            🚀 デモを見る
+          </a>
+          <a href="https://github.com/barusa1002/Patient-Clinician-AI-Simulator" target="_blank" class="link-btn">
+            GitHub
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Skills</div>
+    <h2 class="section-title">スキルセット</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="icon">🐍</div>
+        <div class="name">Python</div>
+        <div class="level">実務レベル（個人開発）</div>
+      </div>
+      <div class="skill-card">
+        <div class="icon">🤖</div>
+        <div class="name">Gemini API</div>
+        <div class="level">プロンプト設計・実装</div>
+      </div>
+      <div class="skill-card">
+        <div class="icon">⚡</div>
+        <div class="name">Streamlit</div>
+        <div class="level">本番アプリ開発</div>
+      </div>
+      <div class="skill-card">
+        <div class="icon">🗄️</div>
+        <div class="name">Supabase</div>
+        <div class="level">Auth + DB 設計・実装</div>
+      </div>
+      <div class="skill-card">
+        <div class="icon">💊</div>
+        <div class="name">薬学専門知識</div>
+        <div class="level">薬学部 5 年（28 卒）</div>
+      </div>
+      <div class="skill-card">
+        <div class="icon">🏥</div>
+        <div class="name">医療ドメイン</div>
+        <div class="level">実務実習（病院・薬局）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">連絡先</h2>
+    <div class="contact-box">
+      <p>医療 IT 企業・大手 SIer の医療部門への就職を希望しています。<br>お気軽にご連絡ください。</p>
+      <div class="contact-links">
+        <a href="mailto:barusa0517@gmail.com" class="link-btn link-btn-primary">
+          ✉️ メールを送る
+        </a>
+        <a href="https://github.com/barusa1002" target="_blank" class="link-btn">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <p>© 2026 Kanta Takashima · 薬学部 28 卒</p>
+  </div>
+</footer>
+
+</body>
+</html>
