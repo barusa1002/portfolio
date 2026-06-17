@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kanta Takashima | Medical IT Portfolio</title>
+  <title>高嶋 貫多 | Medical IT Portfolio</title>
   <style>
     :root {
       --bg:      #060c18;
@@ -186,6 +186,48 @@
       margin-bottom: 44px;
       letter-spacing: -0.02em;
     }
+
+    /* ===== PROFILE ===== */
+    .profile-row {
+      display: flex; gap: 36px; align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      position: relative; overflow: hidden;
+    }
+    .profile-row::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity: 0.6;
+    }
+    @media (max-width: 620px) {
+      .profile-row { flex-direction: column; align-items: center; text-align: center; padding: 24px 20px; }
+    }
+    .profile-avatar {
+      flex-shrink: 0;
+      width: 120px; height: 120px; border-radius: 50%;
+      border: 2px solid rgba(0,200,255,0.4);
+      box-shadow: 0 0 24px rgba(0,200,255,0.2);
+      object-fit: cover;
+    }
+    .profile-text { flex: 1; }
+    .profile-name {
+      font-size: 1.25rem; font-weight: 800;
+      margin-bottom: 4px; letter-spacing: -0.01em;
+    }
+    .profile-meta {
+      font-size: 0.8rem; color: var(--accent);
+      font-weight: 600; letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+    .profile-bio {
+      font-size: 0.92rem; color: var(--muted);
+      line-height: 1.85;
+    }
+    .profile-bio p + p { margin-top: 12px; }
 
     /* ===== ABOUT ===== */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -448,7 +490,7 @@
   <div class="container inner">
     <span class="nav-logo">
       <span class="pulse"></span>
-      Kanta Takashima
+      高嶋 貫多
     </span>
     <ul>
       <li><a href="#about">About</a></li>
@@ -513,6 +555,20 @@
   <div class="container">
     <div class="sec-eyebrow">About</div>
     <h2 class="sec-title">自己紹介</h2>
+
+    <div class="profile-row">
+      <img src="icon.jpg" alt="高嶋 貫多" class="profile-avatar" />
+      <div class="profile-text">
+        <div class="profile-name">高嶋 貫多　Kanta Takashima</div>
+        <div class="profile-meta">昭和薬科大学 薬学部 数理科学研究室 5 年生（28 卒）</div>
+        <div class="profile-bio">
+          <p>はじめまして、高嶋 貫多（Kanta Takashima）と申します。昭和薬科大学 薬学部 数理科学研究室 5 年生（28 卒）です。</p>
+          <p>実務実習で薬局・病院での臨床経験を積む傍ら、「いつでも繰り返し練習できる環境を作りたい」という思いから、AI を使った薬学実習シミュレーターを独学で開発しました。Python・Flutter・Gemini API を用いて Web・Windows・iOS に対応したアプリを個人で設計・実装し、本番運用まで行っています。</p>
+          <p>薬学の専門知識と AI・アプリ開発スキルを活かして、医療 IT 分野でプロダクト開発に携わることを目指しています。</p>
+        </div>
+      </div>
+    </div>
+
     <div class="about-grid">
       <div class="about-card">
         <h3>薬学の専門知識</h3>
@@ -756,7 +812,7 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 Kanta Takashima · 薬学部 28 卒 · Medical IT Portfolio</p>
+    <p>© 2026 高嶋 貫多 · 薬学部 28 卒 · Medical IT Portfolio</p>
   </div>
 </footer>
 
