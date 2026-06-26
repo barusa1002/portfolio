@@ -408,6 +408,12 @@
       box-shadow: 0 0 16px rgba(99,102,241,0.3);
     }
     .link-btn-purple:hover { box-shadow: 0 0 24px rgba(99,102,241,0.5); }
+    .link-btn-green {
+      background: linear-gradient(135deg, #059669, #00e5a0);
+      border-color: transparent; color: #fff;
+      box-shadow: 0 0 16px rgba(0,229,160,0.3);
+    }
+    .link-btn-green:hover { box-shadow: 0 0 24px rgba(0,229,160,0.5); }
 
     /* ===== SKILLS ===== */
     .skills-outer { display: flex; flex-direction: column; gap: 32px; }
@@ -719,6 +725,70 @@
         </div>
       </div>
 
+      <!-- PROJECT 3: セルフメディケーション税制アプリ -->
+      <div class="project-card">
+        <div class="project-header" style="background: linear-gradient(135deg, #071a12 0%, #0a2018 60%, #081510 100%);">
+          <div class="glow" style="background: var(--accent2); top:-60px; right:-60px; width:200px; height:200px; border-radius:50%; filter:blur(60px); position:absolute; opacity:0.2; pointer-events:none;"></div>
+          <div class="tag-row">
+            <span class="tag tag-green">個人開発</span>
+            <span class="tag">Web アプリ</span>
+            <span class="tag">薬学×確定申告</span>
+          </div>
+          <h2>セルフメディケーション税制 記録帳</h2>
+          <p>OTC 薬の購入を記録し、確定申告の控除額を自動計算する薬学特化ツール</p>
+        </div>
+        <div class="project-body">
+          <h3>概要</h3>
+          <p style="color:var(--muted);font-size:0.92rem;line-height:1.8;">
+            市販薬（OTC 薬）の購入履歴を記録し、セルフメディケーション税制の控除額（最大 88,000 円）を
+            自動計算する Web アプリ。バーコードスキャンで薬品を即座に登録でき、
+            確定申告用の医療費控除明細書を印刷・出力できる。薬学部で学んだ知識を一般向けに還元したプロダクト。
+          </p>
+
+          <h3>主な機能</h3>
+          <div class="feature-grid">
+            <div class="feature-item"><span class="fi">📷</span><span>バーコードスキャンで OTC 薬を自動認識・入力（@zxing）</span></div>
+            <div class="feature-item"><span class="fi">🧮</span><span>年間購入額から控除額を自動計算（12,000 円超で最大 88,000 円）</span></div>
+            <div class="feature-item"><span class="fi">🖨️</span><span>確定申告用・医療費控除明細書（特例用）を PDF 印刷出力</span></div>
+            <div class="feature-item"><span class="fi">📊</span><span>CSV エクスポートで購入記録を一括出力</span></div>
+            <div class="feature-item"><span class="fi">💊</span><span>対象 OTC 薬データベースで薬品検索・登録</span></div>
+            <div class="feature-item"><span class="fi">🗂️</span><span>確定申告の手順ガイド・e-Tax 案内を内蔵</span></div>
+          </div>
+
+          <h3>技術スタック</h3>
+          <div class="stack-row">
+            <span class="stk"><span class="stk-dot d-cyan"></span>React 19</span>
+            <span class="stk"><span class="stk-dot d-purple"></span>TypeScript</span>
+            <span class="stk"><span class="stk-dot d-warn"></span>Vite</span>
+            <span class="stk"><span class="stk-dot d-green"></span>@zxing/browser（バーコード）</span>
+            <span class="stk"><span class="stk-dot d-red"></span>jsPDF（PDF 出力）</span>
+            <span class="stk"><span class="stk-dot d-cyan"></span>LocalStorage</span>
+          </div>
+
+          <h3>アーキテクチャ</h3>
+          <div class="arch-box">
+<span class="hl">React 19 + TypeScript</span> (Vite ビルド)<br>
+　├── バーコードスキャン (@zxing/browser)<br>
+　├── 薬品 DB 検索 (drugDatabase.ts)<br>
+　├── 購入記録管理 → <span class="hl2">LocalStorage</span><br>
+　├── 控除額計算 (tax.ts / 閾値 12,000 円・上限 88,000 円)<br>
+　└── 明細書出力 (jsPDF / window.print)
+          </div>
+
+          <h3>工夫した点</h3>
+          <div class="tip-box">
+            ① バーコードスキャン機能でレシートなしでも薬品を瞬時に登録できる UX を実現<br>
+            ② 国税庁の様式に準拠した医療費控除明細書（特例用）をブラウザ内で印刷可能に<br>
+            ③ サーバー不要の LocalStorage 設計でプライバシーに配慮した情報管理<br>
+            ④ 薬学部で学んだセルフメディケーション税制の知識を直接プロダクトに応用
+          </div>
+
+          <div class="link-row">
+            <a href="https://github.com/barusa1002/selfmed-tax-app" target="_blank" class="link-btn link-btn-green">GitHub</a>
+          </div>
+        </div>
+      </div>
+
     </div><!-- /projects -->
   </div>
 </section>
@@ -768,6 +838,12 @@
             <div class="sk-name">FastAPI</div>
             <div class="sk-level">REST API 設計・構築</div>
             <div class="sk-bar"><div class="sk-fill" style="width:58%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="sk-icon">⚛️</div>
+            <div class="sk-name">React / TypeScript</div>
+            <div class="sk-level">Web アプリ開発</div>
+            <div class="sk-bar"><div class="sk-fill" style="width:55%"></div></div>
           </div>
         </div>
       </div>
