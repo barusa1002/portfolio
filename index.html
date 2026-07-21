@@ -790,6 +790,61 @@
         </div>
       </div>
 
+      <!-- PROJECT 4: 持参薬チェック -->
+      <div class="project-card">
+        <div class="project-header" style="background: linear-gradient(135deg, #1a0d00 0%, #1f1200 60%, #180e00 100%);">
+          <div class="glow" style="background:#f59e0b; top:-60px; right:-60px; width:200px; height:200px; border-radius:50%; filter:blur(60px); position:absolute; opacity:0.2; pointer-events:none;"></div>
+          <div class="tag-row">
+            <span class="tag" style="border-color:rgba(245,158,11,0.35);color:#fcd34d;background:rgba(245,158,11,0.07);">個人開発</span>
+            <span class="tag" style="border-color:rgba(245,158,11,0.35);color:#fcd34d;background:rgba(245,158,11,0.07);">独自ドメイン公開中</span>
+            <span class="tag">薬剤師向けツール</span>
+          </div>
+          <h2>持参薬チェック</h2>
+          <p>残薬調整の現場課題から生まれた、使用期限確認・錠剤鑑別を1画面に統合した薬剤師向け Web ツール</p>
+        </div>
+        <div class="project-body">
+          <h3>概要</h3>
+          <p style="color:var(--muted);font-size:0.92rem;line-height:1.8;">
+            PTP シートには渕にロット番号のみ印字され、使用期限は外箱にしかないことが多い。
+            各社の使用期限検索サイトを個別に開く手間という実務課題を解消するため、
+            19 社のリンクを 1 画面に集約し、ロット番号を貼り付けるだけで即検索できるツールを開発。
+            錠剤鑑別・報告書 PDF 印刷も統合し、独自ドメイン <code>jisanyaku-check.com</code> で公開中。
+          </p>
+
+          <h3>主な機能</h3>
+          <div class="feature-grid">
+            <div class="feature-item"><span class="fi">🔍</span><span>19 社の製薬会社 使用期限検索ページへワンタップアクセス</span></div>
+            <div class="feature-item"><span class="fi">💊</span><span>錠剤鑑別（PMDA・ハイパー薬事典へのワンタップ検索）</span></div>
+            <div class="feature-item"><span class="fi">⭐</span><span>よく使うメーカーのお気に入り登録・並び替え</span></div>
+            <div class="feature-item"><span class="fi">📋</span><span>ロット番号コピー機能（各社サイトにそのまま貼り付け）</span></div>
+            <div class="feature-item"><span class="fi">🖨️</span><span>確認結果を報告書として PDF 印刷・保存</span></div>
+            <div class="feature-item"><span class="fi">🔒</span><span>完全ローカル動作（LocalStorage）・サーバーレス</span></div>
+          </div>
+
+          <h3>技術スタック</h3>
+          <div class="stack-row">
+            <span class="stk"><span class="stk-dot d-warn"></span>HTML / CSS</span>
+            <span class="stk"><span class="stk-dot d-warn"></span>JavaScript（バニラ）</span>
+            <span class="stk"><span class="stk-dot d-green"></span>GitHub Pages</span>
+            <span class="stk"><span class="stk-dot d-cyan"></span>独自ドメイン（CNAME）</span>
+            <span class="stk"><span class="stk-dot d-green"></span>LocalStorage</span>
+          </div>
+
+          <h3>開発の背景・工夫した点</h3>
+          <div class="tip-box">
+            ① PTP シートの使用期限問題という「実務で感じた課題」をそのままプロダクト化<br>
+            ② 製薬会社の公開 API が存在しないため、スクレイピングではなくリンク集方式を採用し持続可能な運用を実現<br>
+            ③ ロット番号をクリップボードにコピーして各社サイトで即検索できる UX を設計<br>
+            ④ SEO 対策（schema.org 構造化データ・OGP・sitemap.xml）で検索流入を意識した実装
+          </div>
+
+          <div class="link-row">
+            <a href="https://jisanyaku-check.com/" target="_blank" rel="noopener noreferrer" class="link-btn" style="background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.35);color:#fcd34d;">▶ ツールを使う</a>
+            <a href="https://github.com/barusa1002/med-expiry-finder" target="_blank" rel="noopener noreferrer" class="link-btn">GitHub</a>
+          </div>
+        </div>
+      </div>
+
     </div><!-- /projects -->
   </div>
 </section>
