@@ -860,6 +860,82 @@
         </div>
       </div>
 
+
+      <!-- PROJECT 5: おくすりヒーロー -->
+      <div class="project-card">
+        <div class="project-header" style="background: linear-gradient(135deg, #1a0a12 0%, #200d18 60%, #170a10 100%);">
+          <div class="glow" style="background:#ec4899; top:-60px; right:-60px; width:200px; height:200px; border-radius:50%; filter:blur(60px); position:absolute; opacity:0.2; pointer-events:none;"></div>
+          <div class="tag-row">
+            <span class="tag" style="border-color:rgba(236,72,153,0.35);color:#f9a8d4;background:rgba(236,72,153,0.07);">個人開発</span>
+            <span class="tag" style="border-color:rgba(236,72,153,0.35);color:#f9a8d4;background:rgba(236,72,153,0.07);">iOS アプリ</span>
+            <span class="tag">小児服薬支援</span>
+          </div>
+          <h2>おくすりヒーロー</h2>
+          <p>薬局実習で直面した「子どもが薬を飲んでくれない」課題を、ゲーム体験に変える 3〜6 歳向け服薬支援アプリ</p>
+        </div>
+        <div class="project-body">
+          <h3>概要</h3>
+          <p style="color:var(--muted);font-size:0.92rem;line-height:1.8;">
+            薬局実習中、処方どおりに飲めず残薬を持ち帰る小児が多いことを実感した。
+            苦味や剤形の問題に加え、「飲むこと自体が嫌な体験」になっている点が本質的な課題と考え、
+            服薬をヒーローの物語とごほうびに置き換える iOS アプリを開発。
+            服薬記録・保護者向けの飲み合わせ情報・服薬指導のヒントも統合し、
+            <strong>子ども側の動機づけと保護者側の判断材料を 1 つのアプリで扱う</strong>設計とした。
+          </p>
+
+          <h3>操作デモ</h3>
+          <video controls muted playsinline style="max-height:420px;width:auto;display:block;margin:0 auto 4px;border-radius:8px;background:#000;">
+            <source src="videos/okusuri-hero.mp4" type="video/mp4">
+          </video>
+
+          <h3>主な機能</h3>
+          <div class="feature-grid">
+            <div class="feature-item"><span class="fi">🦸</span><span>バディ育成（6 種 × 5 進化段階）— 服薬でレベルアップし仲間が増える</span></div>
+            <div class="feature-item"><span class="fi">⚔️</span><span>体内スライドショー演出 — 口→食道→胃→腸をたどりバイキンを倒す（時間制限なし・必ず勝てる設計）</span></div>
+            <div class="feature-item"><span class="fi">🎟️</span><span>デジタルシール帳 — 478 枚のシールを台紙に自由にドラッグして貼る</span></div>
+            <div class="feature-item"><span class="fi">📖</span><span>シリーズ図鑑 — 40 シリーズ単位で収集し、達成感が続く設計</span></div>
+            <div class="feature-item"><span class="fi">📷</span><span>カメラ演出 — ヒーローが薬を口まで運ぶ（既定オフ・録画も送信もしない）</span></div>
+            <div class="feature-item"><span class="fi">🧑‍🎨</span><span>自作ヒーロー — 好きな写真から自分だけのバディを作成（端末内のみ保存）</span></div>
+            <div class="feature-item"><span class="fi">💊</span><span>薬価基準 7,020 品目からの予測変換・用法/剤形による自動グルーピング</span></div>
+            <div class="feature-item"><span class="fi">🥄</span><span>粉薬と服用補助食品の飲み合わせ 81 剤 × 21 食品を保護者向けに表示</span></div>
+          </div>
+
+          <h3>技術スタック</h3>
+          <div class="stack-row">
+            <span class="stk"><span class="stk-dot d-cyan"></span>React Native / Expo SDK 54</span>
+            <span class="stk"><span class="stk-dot d-cyan"></span>TypeScript（strict）</span>
+            <span class="stk"><span class="stk-dot d-green"></span>AsyncStorage</span>
+            <span class="stk"><span class="stk-dot d-purple"></span>PanResponder / Animated</span>
+            <span class="stk"><span class="stk-dot d-warn"></span>expo-camera / notifications</span>
+            <span class="stk"><span class="stk-dot d-green"></span>Node.js（画像・データ処理）</span>
+          </div>
+
+          <h3>アーキテクチャ</h3>
+          <p style="color:var(--muted);font-size:0.92rem;line-height:1.8;">
+            サーバーを持たない完全ローカル構成。服薬記録・シールの配置・自作ヒーローの写真は
+            すべて端末内に保存し、外部送信を行わない。
+            画像アセットとマスタデータは Node.js スクリプトで生成し、
+            <strong>「実体（画像ファイル）を唯一の情報源」</strong>として
+            コード側の登録表を自動生成することで、登録漏れ・不整合を構造的に排除している。
+          </p>
+
+          <h3>開発の背景・工夫した点</h3>
+          <div class="tip-box">
+            ① 実習で見た「飲めずに残る」課題を起点に、<strong>子どもが負ける体験を作らない</strong>ゲーム設計（時間制限なし・必ず勝てるミニゲーム）<br>
+            ② 収集要素は 478 種を一列に並べず<strong>シリーズ単位</strong>に分割。全種収集は 4.4 年かかる計算になるため、数週間で 1 シリーズが埋まる構造に変更<br>
+            ③ 素材 1,997 枚を機械的に分類するため、<strong>「同じ前置きの後に 3 種類以上の語尾が続く位置」を切れ目とみなすアルゴリズム</strong>を実装し、動物名の登録漏れによる分類崩れを解消<br>
+            ④ 飲み合わせ表は PDF から <strong>ToUnicode CMap を解析して抽出</strong>。フォントごとに CMap を分離しなかった初期実装の誤りを、記号総数の検算（1,158→1,700）で発見し全 81 剤を復元<br>
+            ⑤ 薬剤データは商品名・一般名の双方で照合。異性体表記・塩・剤形の表記ゆれを正規化し、薬価基準の粉薬 2,051 品目中 185 品目をカバー<br>
+            ⑥ 実機に依存しないロジック検証スクリプト（81 項目）とデータ整合性チェッカーを整備し、UI を起動せず回帰を検出
+          </div>
+
+          <div class="tip-box" style="border-color:rgba(148,163,184,0.25);">
+            <strong>権利処理について</strong>：飲み合わせ表・イラスト素材はいずれも第三者の著作物であり、
+            各利用規約を確認のうえ出典表記を実装。公開・配布には権利者の許諾が必要と判断し、
+            現時点では私的利用の範囲に留めている。
+          </div>
+        </div>
+      </div>
     </div><!-- /projects -->
   </div>
 </section>
@@ -915,6 +991,12 @@
             <div class="sk-name">React / TypeScript</div>
             <div class="sk-level">Web アプリ開発</div>
             <div class="sk-bar"><div class="sk-fill" style="width:55%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="sk-icon">📱</div>
+            <div class="sk-name">React Native / Expo</div>
+            <div class="sk-level">iOS アプリ開発</div>
+            <div class="sk-bar"><div class="sk-fill" style="width:60%"></div></div>
           </div>
         </div>
       </div>
