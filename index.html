@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="薬学×ITで医療現場の課題を解決する。薬学生・高嶋貫多のポートフォリオ。AIシミュレーター・医療系アプリの開発実績を掲載。" />
-  <title>高嶋 貫多 | Medical IT Portfolio</title>
+  <meta name="description" content="薬学×ITで医療現場の課題を解決する。薬学生・高嶋貫多のポートフォリオ兼 KT Lab のアプリ一覧。持参薬チェック・CTCAEグレード判定・おくすりヒーローなど、実習で感じた課題から作った医療系アプリを掲載。" />
+  <title>高嶋 貫多 | Medical IT Portfolio · KT Lab</title>
+  <link rel="canonical" href="https://barusa1002.github.io/portfolio/" />
   <style>
     :root {
       --bg:      #060c18;
@@ -488,6 +489,29 @@
       .stats-bar { grid-template-columns: 1fr; }
       .project-header, .project-body { padding: 24px 20px; }
     }
+
+    /* ===== KT LAB（公開中のアプリ）===== */
+    .apps-lead { color: var(--muted); font-size: 0.95rem; margin: -8px 0 28px; }
+    .apps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 760px) { .apps-grid { grid-template-columns: 1fr; } }
+    .app-tile {
+      display: flex; flex-direction: column; gap: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px;
+      transition: border-color .2s, transform .2s;
+    }
+    .app-tile:hover { border-color: var(--border2); transform: translateY(-2px); }
+    .app-tile h3 { font-size: 1.05rem; color: var(--text); }
+    .app-tile p { color: var(--muted); font-size: 0.86rem; line-height: 1.7; flex: 1; }
+    .app-tile .tag-row { margin: 0; }
+    .app-tile .link-row { margin-top: 4px; }
+    .apps-note { color: var(--muted); font-size: 0.8rem; margin-top: 16px; }
+    /* スマホではメニュー5項目が1行に収まるよう詰める */
+    @media (max-width: 620px) {
+      .nav-logo { white-space: nowrap; font-size: 0.85rem; }
+      nav ul { gap: 12px; }
+      nav ul a { font-size: 0.78rem; letter-spacing: 0; }
+    }
   </style>
 </head>
 <body>
@@ -500,6 +524,7 @@
       高嶋 貫多
     </span>
     <ul>
+      <li><a href="#apps">Apps</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#project">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -533,27 +558,76 @@
     </h1>
     <p>
       薬学専門知識と生成 AI 開発スキルを持つ薬学部 5 年生。<br>
-      AI シミュレーター・モバイルアプリを個人開発し、本番運用中。
+      実習で感じた現場の課題から、Web・iOS・IoT の医療系アプリを個人開発し、公開・運用中。
     </p>
     <div class="btn-row">
-      <a href="#project" class="btn btn-primary">▶ プロジェクトを見る</a>
+      <a href="#apps" class="btn btn-primary">▶ アプリを使う</a>
+      <a href="#project" class="btn btn-outline">プロジェクトを見る</a>
       <a href="#contact" class="btn btn-outline">連絡する</a>
     </div>
 
     <div class="stats-bar">
       <div class="stat-item">
-        <div class="val">3+</div>
-        <div class="label">個人開発アプリ</div>
+        <div class="val">9</div>
+        <div class="label">個人開発プロジェクト</div>
       </div>
       <div class="stat-item">
-        <div class="val">Web · Win · iOS</div>
+        <div class="val">Web · Win · iOS · IoT</div>
         <div class="label">対応プラットフォーム</div>
       </div>
       <div class="stat-item">
-        <div class="val">本番稼働中</div>
-        <div class="label">Streamlit Cloud 運用</div>
+        <div class="val">4 つ公開中</div>
+        <div class="label">独自ドメイン · Streamlit Cloud</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- KT LAB：公開中のアプリ（旧 jisanyaku-check.com/apps/ をここに統合） -->
+<section id="apps">
+  <div class="container">
+    <div class="sec-eyebrow">KT Lab</div>
+    <h2 class="sec-title">いま使えるアプリ</h2>
+    <p class="apps-lead">薬局や病院の実習で感じた「これ、もっと楽にできないか」を、小さなアプリにしています。いずれも無料で、登録なしで使えます。</p>
+    <div class="apps-grid">
+      <div class="app-tile">
+        <div class="tag-row">
+          <span class="tag tag-green">公開中</span>
+          <span class="tag">Web</span>
+          <span class="tag">薬剤師向け</span>
+        </div>
+        <h3>持参薬チェック</h3>
+        <p>持参薬の PTP シートから、製薬会社ごとの使用期限検索ページと錠剤鑑別サイトを探せるリンク集。結果は PDF の報告書にできます。</p>
+        <div class="link-row">
+          <a href="https://jisanyaku-check.com/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-cyan">アプリを開く →</a>
+        </div>
+      </div>
+      <div class="app-tile">
+        <div class="tag-row">
+          <span class="tag tag-green">公開中</span>
+          <span class="tag">Web</span>
+          <span class="tag">医療従事者向け</span>
+        </div>
+        <h3>CTCAE グレード判定</h3>
+        <p>抗がん剤の有害事象を CTCAE v5.0（JCOG 日本語訳）の全 837 項目から検索・判定。検査値を入れると基準範囲（JCCLS）から自動で Grade を出します。</p>
+        <div class="link-row">
+          <a href="https://jisanyaku-check.com/ctcae-grader/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-cyan">アプリを開く →</a>
+        </div>
+      </div>
+      <div class="app-tile">
+        <div class="tag-row">
+          <span class="tag tag-purple">開発中</span>
+          <span class="tag">iOS</span>
+          <span class="tag">ブラウザ版あり</span>
+        </div>
+        <h3>おくすりヒーロー</h3>
+        <p>3〜6 歳の子どもが、薬を飲むことそのものをゲームとして楽しめるアプリ。飲む前の抵抗を下げ、飲んだあとのごほうびで続けやすくします。</p>
+        <div class="link-row">
+          <a href="https://jisanyaku-check.com/okusuri-hero/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-purple">詳しく見る →</a>
+        </div>
+      </div>
+    </div>
+    <p class="apps-note">各アプリの開発の背景と技術的な工夫は、下の「開発プロジェクト」で紹介しています。</p>
   </div>
 </section>
 
@@ -570,7 +644,7 @@
         <div class="profile-meta">昭和薬科大学 薬学部 数理科学研究室 5 年生（28 卒）</div>
         <div class="profile-bio">
           <p>はじめまして、高嶋 貫多（Kanta Takashima）と申します。昭和薬科大学 薬学部 数理科学研究室 5 年生（28 卒）です。</p>
-          <p>実務実習で薬局・病院での臨床経験を積む傍ら、「いつでも繰り返し練習できる環境を作りたい」という思いから、AI を使った薬学実習シミュレーターを独学で開発しました。Python・Flutter・Gemini API を用いて Web・Windows・iOS に対応したアプリを個人で設計・実装し、本番運用まで行っています。</p>
+          <p>実務実習で薬局・病院での臨床経験を積む傍ら、「いつでも繰り返し練習できる環境を作りたい」という思いから、AI を使った薬学実習シミュレーターを独学で開発しました。Python・TypeScript・Flutter・Gemini API を用いて Web・Windows・iOS に対応したアプリを個人で設計・実装し、本番運用まで行っています。その後も、持参薬の使用期限確認、抗がん剤の副作用グレード判定、小児の服薬支援など、実習で困った作業を一つずつ道具にしています。</p>
           <p>薬学の専門知識と AI・アプリ開発スキルを活かして、医療 IT 分野でプロダクト開発に携わることを目指しています。</p>
         </div>
       </div>
@@ -583,7 +657,7 @@
       </div>
       <div class="about-card">
         <h3>開発スキル</h3>
-        <p>Python / Streamlit / Gemini API / Supabase / Flutter を独学習得。認証・DB・LLM・評価機能を一貫実装し、Web・Windows・iOS に対応したアプリを開発。</p>
+        <p>Python / Streamlit / Gemini API / Supabase / Flutter / TypeScript（React・Next.js・React Native）を独学習得。認証・DB・LLM・音声対話・評価機能を一貫実装し、Web・Windows・iOS、マイコンを使った IoT まで開発。</p>
       </div>
       <div class="about-card">
         <h3>志望分野</h3>
@@ -621,6 +695,7 @@
           <p style="color:var(--muted);font-size:0.92rem;line-height:1.8;">
             Google Gemini 2.5 Flash が患者・医師・看護師を演じ、実際のコミュニケーション練習ができる。
             会話後に AI がチェックリスト + SOAP 薬歴を自動評価。Streamlit Community Cloud で本番運用中。
+            2026 年 10 月に Material Design 3 に沿って画面を作り直し、評価の履歴と達成率の可視化を強化した。
           </p>
 
           <h3>操作デモ</h3>
@@ -630,12 +705,14 @@
 
           <h3>主な機能</h3>
           <div class="feature-grid">
-            <div class="feature-item"><span class="fi">🎭</span><span>AI 患者・医師・看護師ロールプレイ（20 以上のシナリオ）</span></div>
-            <div class="feature-item"><span class="fi">📊</span><span>チェックリスト + SOAP 薬歴の AI 自動評価（JSON パース）</span></div>
-            <div class="feature-item"><span class="fi">🎓</span><span>OSCE 対策 / 実習前練習 / 初期研修 の 3 モード</span></div>
-            <div class="feature-item"><span class="fi">🔐</span><span>Supabase Auth 認証・自動ログアウト（30 分）</span></div>
-            <div class="feature-item"><span class="fi">🔊</span><span>gTTS 音声読み上げ・Whisper 音声入力（PC）</span></div>
-            <div class="feature-item"><span class="fi">👩‍🏫</span><span>教員向けスタッフダッシュボード</span></div>
+            <div class="feature-item"><span class="fi">🎭</span><span>AI 患者・医師・看護師ロールプレイ（57 シナリオ）</span></div>
+            <div class="feature-item"><span class="fi">🎓</span><span>スタンダード / スキルアップ / 初期研修 の 3 学習モード</span></div>
+            <div class="feature-item"><span class="fi">📊</span><span>チェックリスト + SOAP 薬歴の AI 自動評価・PDF 出力</span></div>
+            <div class="feature-item"><span class="fi">📈</span><span>課題ごとの達成率をレーダーチャートで表示（平均・最高・最新）</span></div>
+            <div class="feature-item"><span class="fi">💊</span><span>処方内容を薬剤情報提供文書風に表示、薬品名から PMDA 添付文書へ</span></div>
+            <div class="feature-item"><span class="fi">👩‍🏫</span><span>教員向けダッシュボード（評価履歴を課題別・日付別に集計）</span></div>
+            <div class="feature-item"><span class="fi">🔐</span><span>Supabase Auth 認証・30 分無操作で自動ログアウト</span></div>
+            <div class="feature-item"><span class="fi">🔊</span><span>gTTS 音声読み上げ・初回チュートリアル</span></div>
           </div>
 
           <h3>技術スタック</h3>
@@ -644,7 +721,8 @@
             <span class="stk"><span class="stk-dot d-red"></span>Streamlit 1.41</span>
             <span class="stk"><span class="stk-dot d-green"></span>Supabase (Auth + DB)</span>
             <span class="stk"><span class="stk-dot d-warn"></span>Python 3.x</span>
-            <span class="stk"><span class="stk-dot d-cyan"></span>gTTS / Whisper</span>
+            <span class="stk"><span class="stk-dot d-cyan"></span>gTTS</span>
+            <span class="stk"><span class="stk-dot d-purple"></span>matplotlib / ReportLab</span>
             <span class="stk"><span class="stk-dot d-green"></span>Streamlit Cloud</span>
           </div>
 
@@ -657,9 +735,11 @@
 　├── シナリオ選択 (sidebar.py / prompts*.py)<br>
 　├── チャット (ui_chat.py / llm.py)<br>
 　│　　└── <span class="hl">Gemini 2.5 Flash API</span><br>
-　├── 音声 (audio.py / gTTS · Whisper)<br>
+　├── 音声 (audio.py / gTTS)<br>
+　├── 処方カード・添付文書リンク (utils.py / drug_info.py)<br>
 　└── 評価 (evaluation.py)<br>
-　　　　└── <span class="hl2">Supabase DB</span> (evaluations テーブル)
+　　　　├── <span class="hl2">Supabase DB</span> (evaluations テーブル)<br>
+　　　　└── レーダーチャート・PDF (matplotlib / ReportLab)
           </div>
 
           <h3>工夫した点</h3>
@@ -725,8 +805,7 @@
           </div>
 
           <div class="link-row">
-            <a href="https://github.com/barusa1002/pharma-simulator-app" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-purple">GitHub (App)</a>
-            <a href="https://github.com/barusa1002/pharma-simulator-backend" target="_blank" rel="noopener noreferrer" class="link-btn">GitHub (Backend)</a>
+            <span style="color:var(--muted);font-size:0.85rem;">リポジトリは非公開です</span>
           </div>
         </div>
       </div>
@@ -738,9 +817,10 @@
           <div class="tag-row">
             <span class="tag tag-green">個人開発</span>
             <span class="tag">Web アプリ</span>
+            <span class="tag">iOS アプリ</span>
             <span class="tag">薬学×確定申告</span>
           </div>
-          <h2>セルフメディケーション税制 記録帳</h2>
+          <h2>MediSelf（セルフメディケーション税制 記録帳）</h2>
           <p>OTC 薬の購入を記録し、確定申告の控除額を自動計算する薬学特化ツール</p>
         </div>
         <div class="project-body">
@@ -749,6 +829,7 @@
             市販薬（OTC 薬）の購入履歴を記録し、セルフメディケーション税制の控除額（最大 88,000 円）を
             自動計算する Web アプリ。バーコードスキャンで薬品を即座に登録でき、
             確定申告用の医療費控除明細書を印刷・出力できる。薬学部で学んだ知識を一般向けに還元したプロダクト。
+            iOS 版（React Native / Expo）も開発し、レシートを撮影すると生成 AI で品目を読み取る機能を加えた。
           </p>
 
           <h3>操作デモ</h3>
@@ -764,6 +845,8 @@
             <div class="feature-item"><span class="fi">📊</span><span>CSV エクスポートで購入記録を一括出力</span></div>
             <div class="feature-item"><span class="fi">💊</span><span>対象 OTC 薬データベースで薬品検索・登録</span></div>
             <div class="feature-item"><span class="fi">🗂️</span><span>確定申告の手順ガイド・e-Tax 案内を内蔵</span></div>
+            <div class="feature-item"><span class="fi">🧾</span><span>iOS 版：レシート撮影から品目を読み取り（Gemini 2.5 Flash）</span></div>
+            <div class="feature-item"><span class="fi">📅</span><span>iOS 版：月別グラフ・お気に入り登録</span></div>
           </div>
 
           <h3>技術スタック</h3>
@@ -774,6 +857,8 @@
             <span class="stk"><span class="stk-dot d-green"></span>@zxing/browser（バーコード）</span>
             <span class="stk"><span class="stk-dot d-red"></span>jsPDF（PDF 出力）</span>
             <span class="stk"><span class="stk-dot d-cyan"></span>LocalStorage</span>
+            <span class="stk"><span class="stk-dot d-cyan"></span>React Native / Expo SDK 54（iOS）</span>
+            <span class="stk"><span class="stk-dot d-warn"></span>Gemini 2.5 Flash（レシート読み取り）</span>
           </div>
 
           <h3>アーキテクチャ</h3>
@@ -795,7 +880,8 @@
           </div>
 
           <div class="link-row">
-            <a href="https://github.com/barusa1002/selfmed-tax-app" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-green">GitHub</a>
+            <a href="https://github.com/barusa1002/selfmed-tax-app" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-green">GitHub（Web）</a>
+            <a href="https://github.com/barusa1002/selfmed-tax-native" target="_blank" rel="noopener noreferrer" class="link-btn">GitHub（iOS）</a>
           </div>
         </div>
       </div>
@@ -817,7 +903,8 @@
           <p style="color:var(--muted);font-size:0.92rem;line-height:1.8;">
             PTP シートには渕にロット番号のみ印字され、使用期限は外箱にしかないことが多い。
             各社の使用期限検索サイトを個別に開く手間という実務課題を解消するため、
-            19 社のリンクを 1 画面に集約し、ロット番号を貼り付けるだけで即検索できるツールを開発。
+            42 社の使用期限検索ページ（ほかに問い合わせ窓口のみの 7 社）を 1 画面に集約し、ロット番号を貼り付けるだけで即検索できるツールを開発。
+            薬品名を入れると、どのメーカーの薬かも調べられる。
             錠剤鑑別・報告書 PDF 印刷も統合し、独自ドメイン <code>jisanyaku-check.com</code> で公開中。
           </p>
 
@@ -828,7 +915,8 @@
 
           <h3>主な機能</h3>
           <div class="feature-grid">
-            <div class="feature-item"><span class="fi">🔍</span><span>19 社の製薬会社 使用期限検索ページへワンタップアクセス</span></div>
+            <div class="feature-item"><span class="fi">🔍</span><span>42 社の製薬会社 使用期限検索ページへワンタップアクセス</span></div>
+            <div class="feature-item"><span class="fi">🏷️</span><span>薬品名からメーカーを判定（10,576 品目）</span></div>
             <div class="feature-item"><span class="fi">💊</span><span>錠剤鑑別（PMDA・ハイパー薬事典へのワンタップ検索）</span></div>
             <div class="feature-item"><span class="fi">⭐</span><span>よく使うメーカーのお気に入り登録・並び替え</span></div>
             <div class="feature-item"><span class="fi">📋</span><span>ロット番号コピー機能（各社サイトにそのまま貼り付け）</span></div>
@@ -868,6 +956,7 @@
           <div class="tag-row">
             <span class="tag" style="border-color:rgba(236,72,153,0.35);color:#f9a8d4;background:rgba(236,72,153,0.07);">個人開発</span>
             <span class="tag" style="border-color:rgba(236,72,153,0.35);color:#f9a8d4;background:rgba(236,72,153,0.07);">iOS アプリ</span>
+            <span class="tag" style="border-color:rgba(236,72,153,0.35);color:#f9a8d4;background:rgba(236,72,153,0.07);">ブラウザ版公開中</span>
             <span class="tag">小児服薬支援</span>
           </div>
           <h2>おくすりヒーロー</h2>
@@ -881,6 +970,8 @@
             服薬をヒーローの物語とごほうびに置き換える iOS アプリを開発。
             服薬記録・保護者向けの飲み合わせ情報・服薬指導のヒントも統合し、
             <strong>子ども側の動機づけと保護者側の判断材料を 1 つのアプリで扱う</strong>設計とした。
+            2026 年 10 月には同じコードからブラウザ版を書き出して公開し、手描き調の画面・効果音・
+            カメラで口の位置を認識する演出を加えた。
           </p>
 
           <h3>操作デモ</h3>
@@ -930,9 +1021,208 @@
           </div>
 
           <div class="tip-box" style="border-color:rgba(148,163,184,0.25);">
-            <strong>権利処理について</strong>：飲み合わせ表・イラスト素材はいずれも第三者の著作物であり、
-            各利用規約を確認のうえ出典表記を実装。公開・配布には権利者の許諾が必要と判断し、
-            現時点では私的利用の範囲に留めている。
+            <strong>素材について</strong>：飲み合わせ表・イラスト素材はいずれも第三者の著作物であり、
+            各利用規約を確認のうえ出典を表記して使用している。
+          </div>
+
+          <div class="link-row">
+            <a href="https://jisanyaku-check.com/okusuri-hero/app/" target="_blank" rel="noopener noreferrer" class="link-btn" style="background:rgba(236,72,153,0.1);border-color:rgba(236,72,153,0.35);color:#f9a8d4;">▶ ブラウザ版で遊ぶ</a>
+            <a href="https://jisanyaku-check.com/okusuri-hero/" target="_blank" rel="noopener noreferrer" class="link-btn">紹介ページ</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 6: CTCAE グレード判定 -->
+      <div class="project-card">
+        <div class="project-header" style="background: linear-gradient(135deg, #031a1a 0%, #062020 60%, #041515 100%);">
+          <div class="glow" style="background:#14b8a6; top:-60px; right:-60px; width:200px; height:200px; border-radius:50%; filter:blur(60px); position:absolute; opacity:0.2; pointer-events:none;"></div>
+          <div class="tag-row">
+            <span class="tag" style="border-color:rgba(20,184,166,0.35);color:#5eead4;background:rgba(20,184,166,0.07);">個人開発</span>
+            <span class="tag" style="border-color:rgba(20,184,166,0.35);color:#5eead4;background:rgba(20,184,166,0.07);">独自ドメイン公開中</span>
+            <span class="tag">医療従事者向け</span>
+          </div>
+          <h2>CTCAE グレード判定</h2>
+          <p>病院実習で抗がん剤の副作用評価に時間がかかった経験から作った、CTCAE v5.0 の検索・判定ツール</p>
+        </div>
+        <div class="project-body">
+          <h3>概要</h3>
+          <p style="color:var(--muted);font-size:0.92rem;line-height:1.8;">
+            病院実習で、抗がん剤治療中の患者の副作用を CTCAE で評価する際、PDF から該当項目とグレードを探す作業に時間がかかった。
+            CTCAE v5.0（JCOG 日本語訳）の全 837 項目を日本語で検索し、Grade を確認・記録できるツールとして作成。
+            検査値から判定できる項目は、JCCLS 共用基準範囲を既定値に使って自動で Grade を出す。
+          </p>
+
+          <h3>主な機能</h3>
+          <div class="feature-grid">
+            <div class="feature-item"><span class="fi">🔍</span><span>全 837 項目を SOC・Term の日本語で検索</span></div>
+            <div class="feature-item"><span class="fi">🧪</span><span>検査値を入れると自動で Grade 判定（23 項目）</span></div>
+            <div class="feature-item"><span class="fi">📝</span><span>数値で決まらない項目は、原文の Grade 文言から選ぶ方式</span></div>
+            <div class="feature-item"><span class="fi">💉</span><span>レジメン・薬剤名から関連する有害事象を引ける</span></div>
+            <div class="feature-item"><span class="fi">🗂️</span><span>判定結果を記録用にまとめて出力</span></div>
+            <div class="feature-item"><span class="fi">🔒</span><span>完全ローカル処理・外部送信なし</span></div>
+          </div>
+
+          <h3>技術スタック</h3>
+          <div class="stack-row">
+            <span class="stk"><span class="stk-dot d-warn"></span>HTML / CSS / JavaScript（単一ファイル）</span>
+            <span class="stk"><span class="stk-dot d-green"></span>Node.js（データ生成・テスト）</span>
+            <span class="stk"><span class="stk-dot d-cyan"></span>GitHub Pages・独自ドメイン</span>
+          </div>
+
+          <h3>開発の背景・工夫した点</h3>
+          <div class="tip-box">
+            ① 基準の文言は JCOG 版の PDF から抽出し、原文と照合してから登録<br>
+            ② 体表面積の割合や ADL の制限など数式にできない基準は、<strong>架空の数値ロジックを作らず</strong>原文の選択肢から選ぶ方式に<br>
+            ③ 基準範囲は既定値入りで、測定値を入れるだけで判定できる<br>
+            ④ 患者のデータを扱うため、通信を一切行わない設計
+          </div>
+
+          <div class="link-row">
+            <a href="https://jisanyaku-check.com/ctcae-grader/" target="_blank" rel="noopener noreferrer" class="link-btn" style="background:rgba(20,184,166,0.1);border-color:rgba(20,184,166,0.35);color:#5eead4;">▶ ツールを使う</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 7: アバター服薬指導トレーナー -->
+      <div class="project-card">
+        <div class="project-header blue-theme">
+          <div class="glow glow-blue"></div>
+          <div class="tag-row">
+            <span class="tag tag-blue">卒業研究の発展</span>
+            <span class="tag">開発中</span>
+            <span class="tag">Web アプリ</span>
+          </div>
+          <h2>アバター服薬指導トレーナー</h2>
+          <p>3D の患者アバターと声で会話しながら服薬指導を練習する、AI シミュレーターの音声版</p>
+        </div>
+        <div class="project-body">
+          <h3>概要</h3>
+          <p style="color:var(--muted);font-size:0.92rem;line-height:1.8;">
+            AI シミュレーターのシナリオと評価基準をそのまま使い、文字ではなく<strong>声で</strong>、表情のある 3D アバターを相手に練習できるようにした。
+            Gemini Live API によるリアルタイム会話では、患者が話している途中で割り込むこともできる。
+          </p>
+
+          <h3>主な機能</h3>
+          <div class="feature-grid">
+            <div class="feature-item"><span class="fi">🗣️</span><span>押しながら話す方式と、割り込めるリアルタイム会話</span></div>
+            <div class="feature-item"><span class="fi">🧑‍⚕️</span><span>患者の年齢・性別に合わせて 3D アバターと声を自動で選択</span></div>
+            <div class="feature-item"><span class="fi">👄</span><span>声から口の形を推定するリップシンク・まばたき・視線</span></div>
+            <div class="feature-item"><span class="fi">😣</span><span>発言の内容に合わせた表情とうなずき（「痛い」でしかめる など）</span></div>
+            <div class="feature-item"><span class="fi">🏥</span><span>課題に応じた背景、医師役や電話（疑義照会）にも対応</span></div>
+            <div class="feature-item"><span class="fi">📊</span><span>通常版と同じ AI 評価・レーダーチャート・添付文書リンク</span></div>
+          </div>
+
+          <h3>技術スタック</h3>
+          <div class="stack-row">
+            <span class="stk"><span class="stk-dot d-cyan"></span>Next.js 15 / React 19</span>
+            <span class="stk"><span class="stk-dot d-purple"></span>TypeScript</span>
+            <span class="stk"><span class="stk-dot d-cyan"></span>Gemini Live API / 2.5 Flash</span>
+            <span class="stk"><span class="stk-dot d-green"></span>three.js（GLB・VRM）</span>
+            <span class="stk"><span class="stk-dot d-warn"></span>Web Audio API / Web Speech API</span>
+          </div>
+
+          <h3>工夫した点</h3>
+          <div class="tip-box">
+            ① API キーをブラウザに渡さず、1 回限りの一時トークンで接続。患者役の設定もトークンに固定し、画面側から書き換えられないことを確認<br>
+            ② 声の性別が公式資料に書かれていないため、<strong>30 種の声の高さを実測</strong>して男女・年齢に合う声を選び分け<br>
+            ③ 口の形を母音ごとに重ねて少しずつ切り替え、日本語らしい小さな口の動きに調整<br>
+            ④ 「ゆっくり話して」という指示では話す速さが変わらないことを測って確かめ、再生側で速さを調整
+          </div>
+
+          <div class="link-row">
+            <span style="color:var(--muted);font-size:0.85rem;">開発中のため未公開・リポジトリは非公開です</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 8: PISCS AUC -->
+      <div class="project-card">
+        <div class="project-header" style="background: linear-gradient(135deg, #1a1603 0%, #201b06 60%, #151204 100%);">
+          <div class="glow" style="background:#eab308; top:-60px; right:-60px; width:200px; height:200px; border-radius:50%; filter:blur(60px); position:absolute; opacity:0.2; pointer-events:none;"></div>
+          <div class="tag-row">
+            <span class="tag" style="border-color:rgba(234,179,8,0.35);color:#fde047;background:rgba(234,179,8,0.07);">個人開発</span>
+            <span class="tag">学習用</span>
+            <span class="tag">未公開</span>
+          </div>
+          <h2>PISCS AUC 変化予測</h2>
+          <p>CR-IR 法で薬物相互作用による AUC の上昇を計算する、薬学生・薬剤師向けの学習用ツール</p>
+        </div>
+        <div class="project-body">
+          <h3>概要</h3>
+          <p style="color:var(--muted);font-size:0.92rem;line-height:1.8;">
+            基質薬と阻害薬（または誘導薬）を選ぶだけで、CR-IR 法（AUCR = 1 / (1 − CR × IR)）・CR-IC 法により AUC の変化比を計算する。
+            CYP3A・CYP2D6・CYP2C9・CYP2C19 に対応し、計算の過程と出典をあわせて表示する。
+          </p>
+
+          <h3>主な機能</h3>
+          <div class="feature-grid">
+            <div class="feature-item"><span class="fi">🧮</span><span>阻害（IR）・誘導（IC）の両方を計算</span></div>
+            <div class="feature-item"><span class="fi">📊</span><span>複数の相手薬を表と棒グラフで比較</span></div>
+            <div class="feature-item"><span class="fi">🧬</span><span>酵素別チェック・PISCS 分類（CYP3A）</span></div>
+            <div class="feature-item"><span class="fi">✍️</span><span>他の資料の CR・IR を手入力しても計算</span></div>
+            <div class="feature-item"><span class="fi">🔤</span><span>一般名・商品名・ひらがなで部分一致検索</span></div>
+            <div class="feature-item"><span class="fi">🕘</span><span>計算履歴の保存と CSV 出力（患者情報は保存しない）</span></div>
+          </div>
+
+          <h3>技術スタック</h3>
+          <div class="stack-row">
+            <span class="stk"><span class="stk-dot d-warn"></span>HTML / JavaScript（単一ファイル）</span>
+            <span class="stk"><span class="stk-dot d-green"></span>Node.js（データ生成・テスト）</span>
+            <span class="stk"><span class="stk-dot d-cyan"></span>CSV（薬剤データ）</span>
+          </div>
+
+          <h3>工夫した点</h3>
+          <div class="tip-box">
+            ① 資料の間で値が食い違う薬は、原本で確かめてから採用<br>
+            ② 複数の酵素の結果は掛け合わせない（各酵素の寄与が独立だとは確認できないため）<br>
+            ③ 「推定」「分類」「注意喚起」「臨床判断」を区別して表示し、計算結果を処方の判断に使わないよう明記
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 9: 後付け IoT お薬カレンダー -->
+      <div class="project-card">
+        <div class="project-header" style="background: linear-gradient(135deg, #061a0c 0%, #082010 60%, #05150a 100%);">
+          <div class="glow" style="background:#22c55e; top:-60px; right:-60px; width:200px; height:200px; border-radius:50%; filter:blur(60px); position:absolute; opacity:0.2; pointer-events:none;"></div>
+          <div class="tag-row">
+            <span class="tag" style="border-color:rgba(34,197,94,0.35);color:#86efac;background:rgba(34,197,94,0.07);">個人開発</span>
+            <span class="tag">試作中</span>
+            <span class="tag">IoT</span>
+          </div>
+          <h2>後付け IoT お薬カレンダー</h2>
+          <p>市販のお薬カレンダーに後付けして、服薬の状況を薬剤師に届ける服薬フォロー支援</p>
+        </div>
+        <div class="project-body">
+          <h3>概要</h3>
+          <p style="color:var(--muted);font-size:0.92rem;line-height:1.8;">
+            患者が使い慣れた市販のお薬カレンダーをそのまま使い、後付けの装置で服薬の状況を記録して、飲み忘れが続く患者を薬剤師が把握できるようにする。
+            771 試験のメタアナリシスで、コンピュータからの通知よりも<strong>薬剤師による対面の介入</strong>のほうが効果が大きかったことを根拠に、
+            患者への通知を増やすのではなく、薬剤師の声かけにつなげる設計とした。
+          </p>
+
+          <h3>主な機能（構想）</h3>
+          <div class="feature-grid">
+            <div class="feature-item"><span class="fi">📦</span><span>メーカーを問わず市販のカレンダーに後付け</span></div>
+            <div class="feature-item"><span class="fi">🧑‍⚕️</span><span>飲み忘れが続く患者を薬剤師が把握</span></div>
+            <div class="feature-item"><span class="fi">💬</span><span>連絡は LINE（専用アプリを入れなくてよい）</span></div>
+            <div class="feature-item"><span class="fi">🔬</span><span>試作機で、実物の PTP シートの取り出しを検出できることを確認</span></div>
+          </div>
+
+          <h3>技術スタック</h3>
+          <div class="stack-row">
+            <span class="stk"><span class="stk-dot d-purple"></span>TypeScript / Next.js</span>
+            <span class="stk"><span class="stk-dot d-green"></span>マイコン（ESP32）</span>
+            <span class="stk"><span class="stk-dot d-cyan"></span>LINE 通知</span>
+          </div>
+
+          <h3>工夫した点</h3>
+          <div class="tip-box">
+            ① 研究の数値をもとに「患者への通知」ではなく「薬剤師の対面介入」を設計の中心に置いた<br>
+            ② 最初に考えた方式は、試作で条件を満たさないと分かった時点で見送り、別の方式で作り直した
+          </div>
+
+          <div class="link-row">
+            <span style="color:var(--muted);font-size:0.85rem;">試作段階のため、仕組みの詳細は掲載していません</span>
           </div>
         </div>
       </div>
@@ -997,6 +1287,18 @@
             <div class="sk-name">React Native / Expo</div>
             <div class="sk-level">iOS アプリ開発</div>
             <div class="sk-bar"><div class="sk-fill" style="width:60%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="sk-icon">▲</div>
+            <div class="sk-name">Next.js</div>
+            <div class="sk-level">音声 AI・3D の Web アプリ</div>
+            <div class="sk-bar"><div class="sk-fill" style="width:55%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="sk-icon">🔌</div>
+            <div class="sk-name">IoT（ESP32）</div>
+            <div class="sk-level">センサー計測の試作</div>
+            <div class="sk-bar"><div class="sk-fill" style="width:40%"></div></div>
           </div>
         </div>
       </div>

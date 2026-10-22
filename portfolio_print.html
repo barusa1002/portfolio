@@ -236,7 +236,7 @@
 
   <!-- 自己紹介文 -->
   <div class="bio-box">
-    <p>実務実習で薬局・病院での臨床経験を積む傍ら、「いつでも繰り返し練習できる環境を作りたい」という思いから、AI を使った薬学実習シミュレーターを独学で開発しました。Python・Flutter・Gemini API を用いて Web・Windows・iOS に対応したアプリを個人で設計・実装し、本番運用まで行っています。</p>
+    <p>実務実習で薬局・病院での臨床経験を積む傍ら、「いつでも繰り返し練習できる環境を作りたい」という思いから、AI を使った薬学実習シミュレーターを独学で開発しました。Python・TypeScript・Flutter・Gemini API を用いて Web・Windows・iOS に対応したアプリを個人で設計・実装し、本番運用まで行っています。その後も、実習で困った作業を一つずつ道具にしています。</p>
     <p>薬学の専門知識と AI・アプリ開発スキルを活かして、医療 IT 分野でプロダクト開発に携わることを目指しています。</p>
   </div>
 
@@ -263,12 +263,12 @@
       </p>
 
       <div class="feat-grid">
-        <div class="feat">🎭 AI 患者・医師ロールプレイ（10+ シナリオ）</div>
-        <div class="feat">📊 チェックリスト + SOAP 薬歴 AI 自動評価</div>
-        <div class="feat">🎓 3 モード（OSCE・実習前・初期研修）</div>
-        <div class="feat">🔐 Supabase Auth 認証・自動ログアウト</div>
-        <div class="feat">🔊 gTTS 音声読み上げ対応</div>
-        <div class="feat">👩‍🏫 教員向けスタッフダッシュボード</div>
+        <div class="feat">🎭 AI 患者・医師ロールプレイ（57 シナリオ）</div>
+        <div class="feat">📊 チェックリスト + SOAP 薬歴 AI 自動評価・PDF 出力</div>
+        <div class="feat">🎓 3 学習モード（スタンダード・スキルアップ・初期研修）</div>
+        <div class="feat">📈 課題ごとの達成率をレーダーチャートで表示</div>
+        <div class="feat">💊 薬品名から PMDA 添付文書へリンク</div>
+        <div class="feat">👩‍🏫 教員向けダッシュボード（課題別・日付別）</div>
       </div>
 
       <div style="font-size:8pt; font-weight:700; margin-bottom:5px; color:#1a1a2e;">技術スタック</div>
@@ -328,7 +328,7 @@
 
     <div class="proj" style="margin-bottom:0; border-color:#059669;">
       <div class="proj-head" style="background: linear-gradient(90deg, #064e3b 0%, #065f46 100%);">
-        <span class="title" style="font-size:9pt;">セルフメディケーション税制 記録帳</span>
+        <span class="title" style="font-size:9pt;">MediSelf（セルフメディケーション税制 記録帳）</span>
         <div class="tags">
           <span class="tag">React</span>
           <span class="tag">TypeScript</span>
@@ -337,7 +337,7 @@
       <div class="proj-body" style="padding:8px 12px;">
         <p style="font-size:8pt; color:#4a5568; margin-bottom:6px;">
           OTC 薬の購入を記録し、確定申告の控除額（最大 88,000 円）を自動計算する Web アプリ。
-          バーコードスキャンで薬品を即時登録。確定申告用明細書の印刷・CSV 出力にも対応。
+          バーコードスキャンで薬品を即時登録。確定申告用明細書の印刷・CSV 出力にも対応。iOS 版（React Native）ではレシート撮影から品目を読み取る（Gemini 2.5 Flash）。
         </p>
         <div class="stack-row">
           <span class="stk">React 19</span>
@@ -359,7 +359,7 @@
       <div class="proj-body" style="padding:8px 12px;">
         <p style="font-size:8pt; color:#4a5568; margin-bottom:6px;">
           残薬調整時に持参薬の使用期限を確認する薬剤師向け Web ツール。PTP シートにはロット番号しか印字されず、使用期限確認に手間がかかるという実務課題から開発。
-          19 社の製薬会社 使用期限検索ページへのリンク集に加え、錠剤鑑別・報告書 PDF 印刷・お気に入り登録機能を統合。SEO 対応（schema.org・OGP）で独自ドメインにて公開中。
+          42 社の製薬会社 使用期限検索ページへのリンク集に加え、薬品名からのメーカー判定（10,576 品目）・錠剤鑑別・報告書 PDF 印刷・お気に入り登録機能を統合。SEO 対応（schema.org・OGP）で独自ドメインにて公開中。
         </p>
         <div class="stack-row">
           <span class="stk">HTML / CSS / JavaScript</span>
@@ -383,7 +383,7 @@
           薬局実習で「処方どおりに飲めず残薬を持ち帰る小児が多い」現実に直面し、服薬をヒーローの物語とごほうびに変える 3〜6 歳向けアプリを開発。
           バディ育成・体内を進むバトル演出・478 枚のデジタルシール帳で動機づけを行い、保護者向けには服薬記録・粉薬と服用補助食品の飲み合わせ（81 剤 × 21 食品）・飲ませ方のヒントを提供。
           「子どもが負ける体験を作らない」設計（時間制限なし・必ず勝てるミニゲーム）と、収集要素をシリーズ単位に分割して達成感を継続させる構造が特徴。
-          薬価基準 7,020 品目からの予測変換、用法・剤形による服薬のグルーピングも実装。データはすべて端末内に保存し外部送信しない。
+          薬価基準 7,020 品目からの予測変換、用法・剤形による服薬のグルーピングも実装。データはすべて端末内に保存し外部送信しない。2026 年 10 月にブラウザ版を公開。
         </p>
         <div class="stack-row">
           <span class="stk">React Native / Expo SDK 54</span>
@@ -391,6 +391,109 @@
           <span class="stk">AsyncStorage</span>
           <span class="stk">PanResponder / Animated</span>
           <span class="stk">Node.js（画像・データ処理）</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ============================================================
+     PAGE 1.5：2026年10月に加えたプロジェクト
+============================================================ -->
+<div class="page">
+
+  <div class="sec-head">
+    <span class="label">最近の個人開発プロジェクト（2026 年 10 月）</span>
+    <div class="line"></div>
+  </div>
+
+  <div style="display:grid; gap:10px;">
+
+    <div class="proj" style="margin-bottom:0; border-color:#0f766e;">
+      <div class="proj-head" style="background: linear-gradient(90deg, #042f2e 0%, #115e59 100%);">
+        <span class="title" style="font-size:9pt;">CTCAE グレード判定（jisanyaku-check.com/ctcae-grader/）</span>
+        <div class="tags">
+          <span class="tag">医療従事者向け</span>
+          <span class="tag">独自ドメイン公開中</span>
+        </div>
+      </div>
+      <div class="proj-body" style="padding:8px 12px;">
+        <p style="font-size:8pt; color:#4a5568; margin-bottom:6px;">
+          病院実習で、抗がん剤治療中の患者の副作用を CTCAE で評価する際、PDF から該当項目を探す作業に時間がかかった経験から開発。
+          CTCAE v5.0（JCOG 日本語訳）の全 837 項目を日本語で検索し、検査値を入れると JCCLS 共用基準範囲から自動で Grade を判定する（23 項目）。
+          数式にできない基準は架空の数値ロジックを作らず、原文の選択肢から選ぶ方式とした。患者データを扱うため通信を一切行わない。
+        </p>
+        <div class="stack-row">
+          <span class="stk">HTML / JavaScript（単一ファイル）</span>
+          <span class="stk">Node.js（データ生成・テスト）</span>
+          <span class="stk">GitHub Pages</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj" style="margin-bottom:0; border-color:#1d4ed8;">
+      <div class="proj-head" style="background: linear-gradient(90deg, #172554 0%, #1e40af 100%);">
+        <span class="title" style="font-size:9pt;">アバター服薬指導トレーナー</span>
+        <div class="tags">
+          <span class="tag">卒業研究の発展</span>
+          <span class="tag">開発中</span>
+        </div>
+      </div>
+      <div class="proj-body" style="padding:8px 12px;">
+        <p style="font-size:8pt; color:#4a5568; margin-bottom:6px;">
+          AI シミュレーターのシナリオと評価基準を使い、表情のある 3D の患者アバターと<strong>声で</strong>会話しながら服薬指導を練習できる版。
+          Gemini Live API のリアルタイム会話で割り込みにも対応し、患者の年齢・性別に合わせてアバターと声を選ぶ。
+          API キーをブラウザに渡さない一時トークン方式、30 種の声の高さを実測した声の選び分け、日本語に合わせた口の動きの調整などを実装。
+        </p>
+        <div class="stack-row">
+          <span class="stk">Next.js / TypeScript</span>
+          <span class="stk">Gemini Live API</span>
+          <span class="stk">three.js</span>
+          <span class="stk">Web Audio API</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj" style="margin-bottom:0; border-color:#a16207;">
+      <div class="proj-head" style="background: linear-gradient(90deg, #422006 0%, #854d0e 100%);">
+        <span class="title" style="font-size:9pt;">PISCS AUC 変化予測</span>
+        <div class="tags">
+          <span class="tag">学習用</span>
+          <span class="tag">未公開</span>
+        </div>
+      </div>
+      <div class="proj-body" style="padding:8px 12px;">
+        <p style="font-size:8pt; color:#4a5568; margin-bottom:6px;">
+          基質薬と阻害薬（または誘導薬）を選ぶだけで、CR-IR 法・CR-IC 法により薬物相互作用による AUC の変化比を計算する学習用ツール。
+          CYP3A・2D6・2C9・2C19 に対応し、計算の過程と出典を表示。資料間で値が食い違う薬は原本で確認し、複数酵素の結果は掛け合わせない設計とした。
+        </p>
+        <div class="stack-row">
+          <span class="stk">HTML / JavaScript（単一ファイル）</span>
+          <span class="stk">Node.js（データ生成・テスト）</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj" style="margin-bottom:0; border-color:#15803d;">
+      <div class="proj-head" style="background: linear-gradient(90deg, #052e16 0%, #166534 100%);">
+        <span class="title" style="font-size:9pt;">後付け IoT お薬カレンダー</span>
+        <div class="tags">
+          <span class="tag">IoT</span>
+          <span class="tag">試作中</span>
+        </div>
+      </div>
+      <div class="proj-body" style="padding:8px 12px;">
+        <p style="font-size:8pt; color:#4a5568; margin-bottom:6px;">
+          市販のお薬カレンダーに後付けして服薬の状況を記録し、飲み忘れが続く患者を薬剤師が把握できるようにする服薬フォロー支援。
+          771 試験のメタアナリシスで、コンピュータからの通知より薬剤師による対面の介入の効果が大きかったことを根拠に、患者への通知ではなく薬剤師の声かけにつなげる設計とした。
+          試作機で、実物の PTP シートの取り出しを検出できることを確認済み（仕組みの詳細は掲載していない）。
+        </p>
+        <div class="stack-row">
+          <span class="stk">TypeScript / Next.js</span>
+          <span class="stk">マイコン（ESP32）</span>
+          <span class="stk">LINE 通知</span>
         </div>
       </div>
     </div>
@@ -485,6 +588,11 @@
       <div class="detail">大学病院での実務実習</div>
     </div>
     <div class="tl-item">
+      <div class="period">2026年10月</div>
+      <div class="event">CTCAE グレード判定を公開</div>
+      <div class="detail">病院実習で困った副作用評価を道具化し、医療従事者向けに公開</div>
+    </div>
+    <div class="tl-item">
       <div class="period">2028年3月（予定）</div>
       <div class="event">昭和薬科大学 薬学部 卒業</div>
       <div class="detail">薬剤師国家試験受験予定</div>
@@ -515,6 +623,7 @@
       <span>✉ barusa0517@gmail.com</span>
       <span>🌐 github.com/barusa1002</span>
       <span>🚀 streamlit.app（本番運用中）</span>
+      <span>🧰 barusa1002.github.io/portfolio（アプリ一覧）</span>
     </div>
   </div>
 
