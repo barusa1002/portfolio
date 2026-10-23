@@ -568,11 +568,11 @@
 
     <div class="stats-bar">
       <div class="stat-item">
-        <div class="val">9</div>
+        <div class="val">8</div>
         <div class="label">個人開発プロジェクト</div>
       </div>
       <div class="stat-item">
-        <div class="val">Web · Win · iOS · IoT</div>
+        <div class="val">Web · iOS · IoT</div>
         <div class="label">対応プラットフォーム</div>
       </div>
       <div class="stat-item">
@@ -757,55 +757,54 @@
         </div>
       </div>
 
-      <!-- PROJECT 2: Flutter App -->
+      <!-- PROJECT 2: アバター服薬指導トレーナー -->
       <div class="project-card">
-        <div class="project-header purple-theme">
-          <div class="glow glow-purple"></div>
+        <div class="project-header blue-theme">
+          <div class="glow glow-blue"></div>
           <div class="tag-row">
-            <span class="tag tag-purple">個人開発</span>
-            <span class="tag">Windows アプリ</span>
-            <span class="tag">iOS アプリ</span>
+            <span class="tag tag-blue">卒業研究の発展</span>
+            <span class="tag">開発中</span>
+            <span class="tag">Web アプリ</span>
           </div>
-          <h2>薬剤師向け 服薬指導支援アプリ</h2>
-          <p>Flutter でマルチプラットフォーム対応したネイティブアプリ</p>
+          <h2>アバター服薬指導トレーナー</h2>
+          <p>3D の患者アバターと声で会話しながら服薬指導を練習する、AI シミュレーターの音声版</p>
         </div>
         <div class="project-body">
           <h3>概要</h3>
           <p style="color:var(--muted);font-size:0.92rem;line-height:1.8;">
-            薬局・病院の薬剤師が現場で使えるネイティブアプリ。
-            Flutter による単一コードベースで Windows デスクトップ・iOS スマートフォンに対応。
-            バックエンドは Python（FastAPI）で構築し、薬剤情報の参照・管理機能を提供。
+            AI シミュレーターのシナリオと評価基準をそのまま使い、文字ではなく<strong>声で</strong>、表情のある 3D アバターを相手に練習できるようにした。
+            Gemini Live API によるリアルタイム会話では、患者が話している途中で割り込むこともできる。
           </p>
 
           <h3>主な機能</h3>
           <div class="feature-grid">
-            <div class="feature-item purple-fi"><span class="fi">💊</span><span>薬剤情報の検索・閲覧（添付文書連携）</span></div>
-            <div class="feature-item purple-fi"><span class="fi">📱</span><span>Windows・iOS 双方で動作するマルチプラットフォーム対応</span></div>
-            <div class="feature-item purple-fi"><span class="fi">🔄</span><span>Python バックエンド（FastAPI）との REST API 連携</span></div>
-            <div class="feature-item purple-fi"><span class="fi">🎨</span><span>Material Design 3 ベースのクリーンな UI</span></div>
+            <div class="feature-item"><span class="fi">🗣️</span><span>押しながら話す方式と、割り込めるリアルタイム会話</span></div>
+            <div class="feature-item"><span class="fi">🧑‍⚕️</span><span>患者の年齢・性別に合わせて 3D アバターと声を自動で選択</span></div>
+            <div class="feature-item"><span class="fi">👄</span><span>声から口の形を推定するリップシンク・まばたき・視線</span></div>
+            <div class="feature-item"><span class="fi">😣</span><span>発言の内容に合わせた表情とうなずき（「痛い」でしかめる など）</span></div>
+            <div class="feature-item"><span class="fi">🏥</span><span>課題に応じた背景、医師役や電話（疑義照会）にも対応</span></div>
+            <div class="feature-item"><span class="fi">📊</span><span>通常版と同じ AI 評価・レーダーチャート・添付文書リンク</span></div>
           </div>
 
           <h3>技術スタック</h3>
           <div class="stack-row">
-            <span class="stk"><span class="stk-dot d-purple"></span>Flutter（Dart）</span>
-            <span class="stk"><span class="stk-dot d-warn"></span>Python（FastAPI）</span>
-            <span class="stk"><span class="stk-dot d-cyan"></span>Windows Desktop</span>
-            <span class="stk"><span class="stk-dot d-green"></span>iOS</span>
-            <span class="stk"><span class="stk-dot d-red"></span>REST API</span>
+            <span class="stk"><span class="stk-dot d-cyan"></span>Next.js 15 / React 19</span>
+            <span class="stk"><span class="stk-dot d-purple"></span>TypeScript</span>
+            <span class="stk"><span class="stk-dot d-cyan"></span>Gemini Live API / 2.5 Flash</span>
+            <span class="stk"><span class="stk-dot d-green"></span>three.js（GLB・VRM）</span>
+            <span class="stk"><span class="stk-dot d-warn"></span>Web Audio API / Web Speech API</span>
           </div>
 
-          <h3>アーキテクチャ</h3>
-          <div class="arch-box">
-<span class="hl">Flutter フロントエンド</span> (Dart)<br>
-　├── Windows デスクトップ<br>
-　└── iOS アプリ<br>
-　　　↓ REST API<br>
-<span class="hl2">Python バックエンド</span> (FastAPI)<br>
-　└── 薬剤情報 DB
+          <h3>工夫した点</h3>
+          <div class="tip-box">
+            ① API キーをブラウザに渡さず、1 回限りの一時トークンで接続。患者役の設定もトークンに固定し、画面側から書き換えられないことを確認<br>
+            ② 声の性別が公式資料に書かれていないため、<strong>30 種の声の高さを実測</strong>して男女・年齢に合う声を選び分け<br>
+            ③ 口の形を母音ごとに重ねて少しずつ切り替え、日本語らしい小さな口の動きに調整<br>
+            ④ 「ゆっくり話して」という指示では話す速さが変わらないことを測って確かめ、再生側で速さを調整
           </div>
 
           <div class="link-row">
-            <span style="color:var(--muted);font-size:0.85rem;">リポジトリは非公開です</span>
+            <span style="color:var(--muted);font-size:0.85rem;">開発中のため未公開・リポジトリは非公開です</span>
           </div>
         </div>
       </div>
@@ -1083,59 +1082,7 @@
         </div>
       </div>
 
-      <!-- PROJECT 7: アバター服薬指導トレーナー -->
-      <div class="project-card">
-        <div class="project-header blue-theme">
-          <div class="glow glow-blue"></div>
-          <div class="tag-row">
-            <span class="tag tag-blue">卒業研究の発展</span>
-            <span class="tag">開発中</span>
-            <span class="tag">Web アプリ</span>
-          </div>
-          <h2>アバター服薬指導トレーナー</h2>
-          <p>3D の患者アバターと声で会話しながら服薬指導を練習する、AI シミュレーターの音声版</p>
-        </div>
-        <div class="project-body">
-          <h3>概要</h3>
-          <p style="color:var(--muted);font-size:0.92rem;line-height:1.8;">
-            AI シミュレーターのシナリオと評価基準をそのまま使い、文字ではなく<strong>声で</strong>、表情のある 3D アバターを相手に練習できるようにした。
-            Gemini Live API によるリアルタイム会話では、患者が話している途中で割り込むこともできる。
-          </p>
-
-          <h3>主な機能</h3>
-          <div class="feature-grid">
-            <div class="feature-item"><span class="fi">🗣️</span><span>押しながら話す方式と、割り込めるリアルタイム会話</span></div>
-            <div class="feature-item"><span class="fi">🧑‍⚕️</span><span>患者の年齢・性別に合わせて 3D アバターと声を自動で選択</span></div>
-            <div class="feature-item"><span class="fi">👄</span><span>声から口の形を推定するリップシンク・まばたき・視線</span></div>
-            <div class="feature-item"><span class="fi">😣</span><span>発言の内容に合わせた表情とうなずき（「痛い」でしかめる など）</span></div>
-            <div class="feature-item"><span class="fi">🏥</span><span>課題に応じた背景、医師役や電話（疑義照会）にも対応</span></div>
-            <div class="feature-item"><span class="fi">📊</span><span>通常版と同じ AI 評価・レーダーチャート・添付文書リンク</span></div>
-          </div>
-
-          <h3>技術スタック</h3>
-          <div class="stack-row">
-            <span class="stk"><span class="stk-dot d-cyan"></span>Next.js 15 / React 19</span>
-            <span class="stk"><span class="stk-dot d-purple"></span>TypeScript</span>
-            <span class="stk"><span class="stk-dot d-cyan"></span>Gemini Live API / 2.5 Flash</span>
-            <span class="stk"><span class="stk-dot d-green"></span>three.js（GLB・VRM）</span>
-            <span class="stk"><span class="stk-dot d-warn"></span>Web Audio API / Web Speech API</span>
-          </div>
-
-          <h3>工夫した点</h3>
-          <div class="tip-box">
-            ① API キーをブラウザに渡さず、1 回限りの一時トークンで接続。患者役の設定もトークンに固定し、画面側から書き換えられないことを確認<br>
-            ② 声の性別が公式資料に書かれていないため、<strong>30 種の声の高さを実測</strong>して男女・年齢に合う声を選び分け<br>
-            ③ 口の形を母音ごとに重ねて少しずつ切り替え、日本語らしい小さな口の動きに調整<br>
-            ④ 「ゆっくり話して」という指示では話す速さが変わらないことを測って確かめ、再生側で速さを調整
-          </div>
-
-          <div class="link-row">
-            <span style="color:var(--muted);font-size:0.85rem;">開発中のため未公開・リポジトリは非公開です</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJECT 8: PISCS AUC -->
+      <!-- PROJECT 7: PISCS AUC -->
       <div class="project-card">
         <div class="project-header" style="background: linear-gradient(135deg, #1a1603 0%, #201b06 60%, #151204 100%);">
           <div class="glow" style="background:#eab308; top:-60px; right:-60px; width:200px; height:200px; border-radius:50%; filter:blur(60px); position:absolute; opacity:0.2; pointer-events:none;"></div>
@@ -1180,7 +1127,7 @@
         </div>
       </div>
 
-      <!-- PROJECT 9: 後付け IoT お薬カレンダー -->
+      <!-- PROJECT 8: 後付け IoT お薬カレンダー -->
       <div class="project-card">
         <div class="project-header" style="background: linear-gradient(135deg, #061a0c 0%, #082010 60%, #05150a 100%);">
           <div class="glow" style="background:#22c55e; top:-60px; right:-60px; width:200px; height:200px; border-radius:50%; filter:blur(60px); position:absolute; opacity:0.2; pointer-events:none;"></div>
